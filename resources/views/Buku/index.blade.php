@@ -32,7 +32,7 @@
     @endif
     <table class="table table-bordered">
         <tr>
-            <th>Id_Buku</th>
+            <th>ID Buku</th>
             <th>Judul</th>
             <th>Penerbit</th>
             <th>Pengarang</th>
