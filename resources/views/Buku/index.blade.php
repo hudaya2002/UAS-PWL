@@ -1,21 +1,21 @@
-@extends('buku.layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left mt-2">
-            <h2>DATA BUKU PERPUSTAKAAN</h2>
+            <h2>DATA BUKU</h2>
         </div>
         <div class="float-right my-2">
-        <!-- <a class="btn btn-success" href="{{ route('buku.create') }}"> Input Buku</a> -->
         </div>
         <div class="float-left my-3">
             <form action="{{ route('buku.index') }}">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="" name="search" value="{{ request('search')}}" style="width: 1000px">
+                    <input type="text" class="form-control" placeholder="" name="search" value="{{ request('search')}}" style="width: 882px">
                     <button class="btn btn-primary" type="submit">Search</button>&emsp;
                     <a class="btn btn-success" href="{{ route('buku.create') }}"> Input Buku</a>
                 </div>
+            </form>
         </div>
     </div>
 </div>
@@ -32,13 +32,13 @@
     @endif
     <table class="table table-bordered">
         <tr>
-            <th>ID Buku</th>
-            <th>Judul</th>
-            <th>Penerbit</th>
-            <th>Pengarang</th>
-            <th>Jenis</th>
-            <th>Stok</th>
-            <th width="280px">Action</th>
+            <th><center>ID Buku</th>
+            <th><center>Judul</th>
+            <th><center>Penerbit</th>
+            <th><center>Pengarang</th>
+            <th><center>Jenis</th>
+            <th><center>Stok</th>
+            <th width="280px"><center>Action</th>
         </tr>
         @foreach ($paginate as $bk)
         <tr>
@@ -62,4 +62,4 @@
     </table>
     {{ $paginate->links()}}
     
-    @endsection
+@endsection
