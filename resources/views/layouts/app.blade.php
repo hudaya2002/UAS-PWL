@@ -49,8 +49,8 @@
                     <i class="bi bi-speedometer2"></i>
                     <span>Dashboard</span></a>
             </li>
-			<li class="nav-item {{ (request()->is('buku.index')) ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('buku.index') }}">
+			<li class="nav-item {{ (request()->is('anggota.index')) ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('anggota.index') }}">
                     <i class="bi bi-person-circle"></i>
                     <span>Anggota</span></a>
             </li>

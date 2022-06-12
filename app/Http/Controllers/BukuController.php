@@ -146,4 +146,9 @@ class BukuController extends Controller
         -> with('success', 'Buku Berhasil Dihapus');
 
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

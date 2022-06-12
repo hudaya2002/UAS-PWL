@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\AnggotaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,5 +22,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/buku', [App\Http\Controllers\BukuController::class, 'index'])->name('buku');
+Route::get('/anggota/{id}/cetak', [App\Http\Controllers\AnggotaController::class, 'cetak'])->name('cetak');
 
 Route::resource('buku', BukuController::class);
+Route::resource('anggota', AnggotaController::class);
