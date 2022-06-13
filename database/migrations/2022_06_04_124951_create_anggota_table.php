@@ -14,7 +14,7 @@ class CreateAnggotaTable extends Migration
     public function up()
     {
         Schema::create('anggota', function (Blueprint $table) {
-            $table->id('id_ag');
+            $table->id('id');
             $table->string('nama_ag');
             $table->string('jenis_kelamin');
             $table->string('alamat');

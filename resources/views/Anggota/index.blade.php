@@ -32,7 +32,6 @@
     @endif
     <table class="table table-bordered">
         <tr>
-            <th><center>ID</th>
             <th><center>Nama</th>
             <th><center>Alamat</th>
             <th><center>Jenis Kelamin</th>
@@ -40,17 +39,17 @@
         </tr>
         @foreach ($paginate as $ag)
         <tr>
-            <td><center>{{ $ag ->id_ag }}</td>
             <td><center>{{ $ag ->nama_ag }}</td>
             <td><center>{{ $ag ->alamat }}</td>
             <td><center>{{ $ag ->jenis_kelamin }}</td>
             <td>
-
-                    <a class="btn btn-info" href="{{ route('anggota.show',$ag->id_ag) }}">Show</a>
-                    <a class="btn btn-primary" href="{{ route('anggota.edit',$ag->id_ag) }}">Edit</a>
-                    
+                <form action="{{ route('anggota.destroy',$ag->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('anggota.show',$ag->id) }}">Show</a>
+                    <a class="btn btn-primary" href="{{ route('anggota.edit',$ag->id) }}">Edit</a>
+                    @csrf
+                    @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>
-                    <a class="btn btn-warning" href="{{ route('cetak',$ag->id_ag) }}">Kartu</a>
+                    <a class="btn btn-warning" href="{{ route('cetak',$ag->id) }}">Kartu</a>
                 </form>
             </td>
         </tr>

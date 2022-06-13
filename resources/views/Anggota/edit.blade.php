@@ -20,12 +20,12 @@
                     </ul>
                 </div>
                 @endif
-                <form method="post" action="{{ route('anggota.update', $anggota->id_ag) }}" id="myForm" }} method="post" enctype="multipart/form-data">
-                    @method('PUT')
+                <form method="post" action="{{ route('anggota.update', $anggota->id) }}" id="myForm" }} method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="form-group">
                         <label for="foto">Foto</label>         
-                        <input type="file" class="form-control" name="foto" value="{{ $anggota->foto}}"><br>
+                        <input type="file" class="form-control" name="foto" placeholder="{{ $anggota->foto}}"><br>
                         <img width="150px" src="{{asset('storage/'.$anggota->foto)}}"> 
                     </div> 
                     <div class="form-group">
