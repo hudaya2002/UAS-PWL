@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\PinjamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,4 @@ Route::get('/anggota/{id}/cetak', [App\Http\Controllers\AnggotaController::class
 
 Route::resource('buku', BukuController::class);
 Route::resource('anggota', AnggotaController::class);
+Route::resource('pinjam', PinjamController::class);

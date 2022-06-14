@@ -17,4 +17,7 @@ class Anggota extends Model
         'ttl',
         'foto',
     ];
+    public function Pinjam(){
+        return $this->belongsToMany(Pinjam::class, 'id');
+    }
 }

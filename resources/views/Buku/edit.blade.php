@@ -45,7 +45,7 @@
                     </div>
                     <div class="form-group">
                         <label for="Stok">Stok</label>
-                        <input type="Stok" name="Stok" class="form-control" id="Stok" value="{{ $Buku->stok }}" aria-describedby="Stok">
+                        <input type="number" name="Stok" class="form-control" id="Stok" value="{{ $Buku->stok }}" aria-describedby="Stok">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

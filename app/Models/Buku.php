@@ -10,8 +10,7 @@ use Illuminate\Notifications\Notifiable;
 
 class Buku extends Model
 {
-    protected $table='buku';    // Eloquent akan membuat model mahasiswa menyimpan record di tabel mahasiswa
-    protected $primaryKey ='id_buku';     // Memanggil isi DB Dengan primarykey
+    protected $table='buku';    
 
     protected $fillable = [
         'Id_Buku',
