@@ -12,7 +12,7 @@
             <h4><center>KARTU ANGGOTA</center></h4>
             <h4 style="line-height: 0.5mm;"><center>PERPUSTAKAAN</center></h4><hr>
             <div>
-                <img src="{{storage_path('app/public/'.$anggota->foto) }}" width="120px" height="120px" style="margin-left: 35px; border-radius: 50%; margin-top: 10px;">
+                <img src="{{storage_path('app/public/'.$anggota->foto) }}" width="120px" height="120px" style="margin-left: 32px; border-radius: 50%; margin-top: 10px;">
                 <div style="float: right; margin-right: 60px; margin-bottom: 20px;">
                     <p>Nama : {{$anggota->nama_ag}}</p>
                     <p>Alamat : {{$anggota->alamat}}</p>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Anggota;
+use App\Models\Buku;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $jumlah_anggota = Anggota::all()->count();
+        $anggota_p = Anggota::where('jenis_kelamin', 'like', 'pria')->count();
+        $anggota_w = Anggota::where('jenis_kelamin', 'like', 'wanita')->count();
+        $jumlah_buku = Buku::all()->count();
+        $buku_n = Buku::where('jenis', 'like', 'novel')->count();
+        $buku_p = Buku::where('jenis', 'like', 'buku pelajaran')->count();
+        $buku_k = Buku::where('jenis', 'like', 'buku komedi')->count();
+        $buku_a = Buku::where('jenis', 'like', 'buku agama')->count();
+        $buku_ko = Buku::where('jenis', 'like', 'komik')->count();
+        return view('home', ['anggota_p' => $anggota_p, 'anggota_w' => $anggota_w, 'jumlah_anggota' => $jumlah_anggota,
+                                'jumlah_buku' => $jumlah_buku, 'buku_n' => $buku_n, 'buku_p' => $buku_p, 'buku_k' => $buku_k,
+                                'buku_a' => $buku_a, 'buku_ko' => $buku_ko]);
     }
 }
