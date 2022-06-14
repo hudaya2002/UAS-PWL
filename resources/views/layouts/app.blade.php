@@ -59,8 +59,8 @@
                     <i class="bi bi-book"></i>
                     <span>Buku</span></a>
             </li>
-			<li class="nav-item {{ (request()->is('buku.index')) ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('buku.index') }}">
+			<li class="nav-item {{ (request()->is('pinjam.index')) ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('pinjam.index') }}">
                     <i class="bi bi-bag-check-fill"></i>
                     <span>Peminjaman</span></a>
             </li>

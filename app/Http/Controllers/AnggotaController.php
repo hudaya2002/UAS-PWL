@@ -142,4 +142,9 @@ class AnggotaController extends Controller
         $pdf = PDF::loadview('anggota.kartu',['anggota'=>$anggota]);
         return $pdf->stream();
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }
