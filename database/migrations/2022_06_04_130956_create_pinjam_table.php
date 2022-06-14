@@ -14,7 +14,7 @@ class CreatePinjamTable extends Migration
     public function up()
     {
         Schema::create('pinjam', function (Blueprint $table) {
-            $table->id('id_pj');
+            $table->id('id');
             $table->unsignedBigInteger('id_ag'); 
             $table->unsignedBigInteger('id_buku'); 
             $table->foreign('id_ag')->references('id')->on('anggota'); 
