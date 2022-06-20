@@ -145,18 +145,16 @@ class PinjamController extends Controller
         $pinjam-> id_buku = $request->get('id_buku');
         $pinjam->tanggal_pinjam = $request->get('tanggal_pinjam');
         $pinjam->tanggal_kembali = $request->get('tanggal_kembali');
+        $pinjam->lambat = $request->get('lambat');
+        $pinjam->kembali = $request->get('kembali');
         $pinjam->status = $request->get('status');
-        $pinjam->save();
 
-        // $buku = new Buku;
-        // $buku->id_buku = $request->get('Buku');
-
-        // $anggota = new Anggota;
-        // $anggota->id= $request->get('Anggota');
-
-        // //fungsi eloquent untuk menambah data dengan relasi belongsTo
-        // $pinjam->buku()->associate($buku);
-        // $pinjam->anggota()->associate($anggota);
+        $lambat = $pinjam->lambat = $request->get('lambat');
+        if($lambat > 0){
+            $pinjam->denda = $lambat * 1500;
+        }else{
+            $pinjam->denda = 0;
+        }
         $pinjam->save();
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('pinjam.index')

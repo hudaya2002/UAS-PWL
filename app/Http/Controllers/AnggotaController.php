@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\Anggota;
+use App\Models\Pinjam;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use PDF;
@@ -132,6 +133,7 @@ class AnggotaController extends Controller
      */
     public function destroy($id)
     {
+        Pinjam::where('id_ag', $id)->delete();
         Anggota::where('id', $id)->delete();
         return redirect()->route('anggota.index')
         -> with('success', 'Data Anggota Berhasil Dihapus');

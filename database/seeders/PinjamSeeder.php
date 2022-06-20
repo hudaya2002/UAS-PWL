@@ -15,7 +15,7 @@ class PinjamSeeder extends Seeder
     public function run()
     {
         DB::table('pinjam')->insert([
-            'id' => '1',
+            'id_ag' => '1',
             'id_buku' => '1',
             'tanggal_pinjam' => '2001-06-01',
             'tanggal_kembali' => '2001-06-07',

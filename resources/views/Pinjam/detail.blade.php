@@ -14,7 +14,10 @@
                  <li class="list-group-item"><b>Judul : </b>{{$Pinjam_b->buku->judul}}</li>
                  <li class="list-group-item"><b>Tanggal Pinjam : </b>{{$Pinjam->tanggal_pinjam}}</li>
                   <li class="list-group-item"><b>Tanggal Kembali : </b>{{$Pinjam->tanggal_kembali}}</li>
+                  <li class="list-group-item"><b>Buku Kembali : </b>{{$Pinjam->kembali}}</li>
+                  <li class="list-group-item"><b>Terlambat : </b>{{$Pinjam->lambat}} hari</li>
                   <li class="list-group-item"><b>Status : </b>{{$Pinjam->status}}</li>
+                  <li class="list-group-item"><b>Denda : </b>{{$Pinjam->denda}}</li>
                 </ul>
             </div>
             <a class="btn btn-success mt-3" href="{{ route('pinjam.index') }}">Kembali</a>

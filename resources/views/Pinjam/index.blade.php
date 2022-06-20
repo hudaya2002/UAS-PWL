@@ -31,23 +31,23 @@
 @endif
 <table class="table table-bordered">
     <tr>
-        <th>ID Pinjam</th>
-        <th>Nama</th>
-        <th>Judul</th>
-        <th>Tanggal Pinjam</th>
-        <th>Tanggal Kembali</th>
-        <th>Status</th>
-        <th width="280px">Action</th>
+        <!-- <th><center>ID Pinjam</th> -->
+        <th><center>Nama</th>
+        <th><center>Judul</th>
+        <th><center>Tanggal Pinjam</th>
+        <th><center>Tanggal Kembali</th>
+        <th><center>Status</th>
+        <th width="280px"><center>Action</th>
     </tr>
     @foreach ($paginate as $pj)
     <tr>
-        <td>{{ $pj->id}}</td>
-        <td>{{ $pj->anggota->nama_ag}}</td>
+        <!-- <td><center>{{ $pj->id}}</td> -->
+        <td><center>{{ $pj->anggota->nama_ag}}</td>
         <td>{{ $pj->buku->judul}}</td>
         <td>{{ $pj->tanggal_pinjam}}</td>
         <td>{{ $pj->tanggal_kembali}}</td>
         <td>{{ $pj->status}}</td>
-        <td>
+        <td><center>
             <form action="{{ route('pinjam.destroy',['pinjam'=>$pj->id]) }}" method="POST">
                 <a class="btn btn-info" href="{{ route('pinjam.show',$pj->id) }}">Show</a>
                 <a class="btn btn-primary" href="{{ route('pinjam.edit',$pj->id) }}">Edit</a>

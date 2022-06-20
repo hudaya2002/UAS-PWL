@@ -27,7 +27,7 @@
                         <label for="id_ag">Nama</label>
                         <select name="id_ag" class="form-control">
                             @foreach($anggota as $ag)
-                            <option value="{{$ag->id}}" {{$pinjam->id == $ag->id ? 'selected' : ''}}>{{$ag->nama_ag}}</option>
+                            <option value="{{$ag->id}}" {{$pinjam->id_ag == $ag->id ? 'selected' : ''}}>{{$ag->nama_ag}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -48,11 +48,24 @@
                         <input type="date" name="tanggal_kembali" class="form-control" id="tanggal_kembali" value="{{ $pinjam->tanggal_kembali}}" aria-describedby="tanggal_kembali" > 
                     </div>
                     <div class="form-group">
+                        <label for="kembali">Buku Kembali</label> 
+                        <input type="date" name="kembali" class="form-control" id="kembali" value="{{ $pinjam->kembali}}" aria-describedby="kembali" > 
+                    </div>
+                    <div class="form-group">
+                        <label for="lambat">Buku Kembali</label> 
+                        <input type="number" name="lambat" class="form-control" id="lambat" value="{{ $pinjam->lambat}}" aria-describedby="lambat" > 
+                    </div>
+                    <div class="form-group">
                         <label for="status">Status</label>
                         <select name="status" class="form-control select2">
+                                <option>{{ $pinjam->status}}</option>
                                 <option value="Pinjam">Pinjam</option>
                                 <option value="Kembali">Kembali</option>          
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="denda">Denda</label> 
+                        <input type="text" name="denda" class="form-control" id="denda" value="{{ $pinjam->denda}}" aria-describedby="denda" > 
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

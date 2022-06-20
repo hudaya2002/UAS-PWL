@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Buku;
+use App\Models\Pinjam;
 use Illuminate\Http\Request;
 
 class BukuController extends Controller
@@ -141,6 +142,7 @@ class BukuController extends Controller
     public function destroy($id)
     {
         //fungsi eloquent untuk menghapus data
+        Pinjam::where('id_buku', $id)->delete();
         Buku::where('id_buku', $id)->delete();
         return redirect()->route('buku.index')
         -> with('success', 'Buku Berhasil Dihapus');

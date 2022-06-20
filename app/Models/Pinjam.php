@@ -17,7 +17,10 @@ class Pinjam extends Model
         'id_Buku',
         'tanggal_pinjam',
         'tanggal_kembali',
+        'kembali',
+        'lambat',
         'status',
+        'denda',
     ];
 
         public function buku(){

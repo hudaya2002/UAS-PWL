@@ -42,13 +42,13 @@
         </tr>
         @foreach ($paginate as $bk)
         <tr>
-            <td>{{ $bk ->id_buku }}</td>
+            <td><center>{{ $bk ->id_buku }}</td>
             <td>{{ $bk ->judul }}</td>
             <td>{{ $bk ->penerbit }}</td>
             <td>{{ $bk ->pengarang }}</td>
             <td>{{ $bk ->jenis }}</td>
             <td>{{ $bk ->stok }}</td>
-            <td>
+            <td><center>
                 <form action="{{ route('buku.destroy',['buku'=>$bk->id_buku]) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('buku.show',$bk->id_buku) }}">Show</a>
                     <a class="btn btn-primary" href="{{ route('buku.edit',$bk->id_buku) }}">Edit</a>

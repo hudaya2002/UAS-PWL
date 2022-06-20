@@ -42,7 +42,8 @@
                     </div>
                     <div class="form-group">
                     <label for="jenis_kelamin">Jenis Kelamin</label>
-                        <select name="jenis_kelamin" class="form-control" value="{{$anggota->jenis_kelamin}}">
+                        <select name="jenis_kelamin" class="form-control">
+                            <option>{{$anggota->jenis_kelamin}}</option>
                             <option>Pria</option>
                             <option>Wanita</option>
                         </select>

@@ -28,8 +28,9 @@
                                         <div class="col mr-2">
                                             <div class="text-sm font-weight-bold text-success text-uppercase mb-1">
                                                 Peminjaman</div>
-                                            <div class="h6 mb-0 font-weight text-gray-800">Dipinjam : 25</div>
-											<div class="h6 mb-0 font-weight text-gray-800">Kembali  : 10</div>
+                                            <div class="h6 mb-0 font-weight text-gray-800">Pinjam : {{ $pinjam_p }}</div>
+											<div class="h6 mb-0 font-weight text-gray-800">Kembali : {{ $pinjam_k }}</div>
+											<div class="h6 mb-0 font-weight text-gray-800">Total : {{ $jumlah_pinjam }}</div>
                                         </div>
                                         <div class="col-auto">
                                             
@@ -45,14 +46,14 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-sm font-weight-bold text-warning text-uppercase mb-1">
+                                            <div class="text-sm font-weight-bold text-warning text-uppercase mb-1" >
                                                 Buku</div>
                                             <div class="h6 mb-0 font-weight text-gray-800">Novel : {{ $buku_n }}</div>
-											<div class="h6 mb-0 font-weight text-gray-800">Pelajaran  : {{ $buku_p }}</div>
-											<div class="h6 mb-0 font-weight text-gray-800">Komedi  : {{ $buku_k }}</div>
-											<div class="h6 mb-0 font-weight text-gray-800">Agama  : {{ $buku_a }}</div>
-											<div class="h6 mb-0 font-weight text-gray-800">Komik  : {{ $buku_ko }}</div>
-											<div class="h6 mb-0 font-weight text-gray-800">Total  : {{ $jumlah_buku }}</div>
+											<div class="h6 mb-0 font-weight text-gray-800">Pelajaran : {{ $buku_p }}</div>
+											<div class="h6 mb-0 font-weight text-gray-800">Komedi : {{ $buku_k }}</div>
+											<div class="h6 mb-0 font-weight text-gray-800">Agama : {{ $buku_a }}</div>
+											<div class="h6 mb-0 font-weight text-gray-800">Komik : {{ $buku_ko }}</div>
+											<div class="h6 mb-0 font-weight text-gray-800">Total : {{ $jumlah_buku }}</div>
                                         </div>
                                         <div class="col-auto">
                                             
