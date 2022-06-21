@@ -47,10 +47,7 @@
                     </div>
                     <div class="form-group">
                         <label for="status">Status</label>
-                        <select name="status" class="form-control select2">
-                            <option value="Pinjam">Pinjam</option>
-                            <option value="Kembali">Kembali</option>
-                        </select>
+                        <input type="text" name="status" class="form-control" id="status" aria-describedby="status" value="Pinjam">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
