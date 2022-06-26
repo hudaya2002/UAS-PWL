@@ -64,6 +64,7 @@
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <button class="btn btn-success" href="{{ route('pinjam.index') }}">Kembali</button>
                 </form>
             </div>
         </div>

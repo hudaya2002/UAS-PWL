@@ -49,16 +49,13 @@ class AnggotaController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->file('foto')){
-            $image_name = $request->file('foto')->store('images', 'public');
-        }
 
         Anggota::create([
             'nama_ag' => $request->nama,
             'alamat' => $request->alamat,
             'ttl' => $request->ttl,
             'jenis_kelamin' => $request->jenis_kelamin,
-            'foto' => $image_name,
+            'foto' => 'images/profile/default.png',
         ]);
 
         return redirect()->route('anggota.index')
@@ -98,23 +95,24 @@ class AnggotaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $request->validate([
-        //     'nama' => 'required',
-        //     'alamat' => 'required',
-        //     'ttl' => 'required',
-        //     'jenis_kelamin' => 'required',
-        //     'foto' => 'required',
-        // ]);
-
         $anggota = Anggota::where('id', $id)->first();
-        // $anggota = DB::table('anggota')->where('id_ag', $id)->first();
-        if ($anggota->foto && file_exists(storage_path('app/public/' . $anggota->foto))) {
-            Storage::delete('public/' . $anggota->foto); 
-        }
 
-        $image_name = $request->file('foto')->store('images', 'public');
-        $anggota->foto = $image_name;
-        // $anggota->foto = $request->get('foto');
+        if ($request->hasFile('foto')) {
+            // ada file yang diupload
+            if ($anggota->foto && $anggota->foto != 'images/profile/default.png' && file_exists(storage_path('app/public/' . $anggota->foto))) {
+                Storage::delete('public/' . $anggota->foto);
+            }
+            $filenameWithExt = $request->file('foto')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('foto')->getClientOriginalExtension();
+            $filenameSimpan = $filename . '_' . time() . '.' . $extension;
+            $path = $request->file('foto')->storeAs('public/img/profile/anggota', $filenameSimpan);
+            $savepath = 'img/profile/anggota/' . $filenameSimpan;
+        } else {
+            // tidak ada file yang diupload
+            $savepath = $anggota->foto;
+        }
+        $anggota->foto = $savepath;
 
         $anggota->nama_ag = $request->get('nama');
         $anggota->alamat = $request->get('alamat');

@@ -48,6 +48,7 @@
                         <input type="number" name="Stok" class="form-control" id="Stok" value="{{ $Buku->stok }}" aria-describedby="Stok">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <button class="btn btn-success" href="{{ route('buku.index') }}">Kembali</button>
                 </form>
             </div>
         </div>

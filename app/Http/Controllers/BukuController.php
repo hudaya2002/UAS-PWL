@@ -63,7 +63,7 @@ class BukuController extends Controller
             'Pengarang' => 'required',
             'Jenis' => 'required',
             // 'Stok '=> 'required',  
-    ]);
+        ]);
         //fungsi eloquent untuk menambah data
         Buku::create($request->all());
 

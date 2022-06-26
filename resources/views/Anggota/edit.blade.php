@@ -49,6 +49,7 @@
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <button class="btn btn-success" href="{{ route('anggota.index') }}">Kembali</button>
                 </form>
             </div>
         </div>

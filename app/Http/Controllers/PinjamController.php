@@ -158,7 +158,7 @@ class PinjamController extends Controller
         $pinjam->save();
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('pinjam.index')
-        ->with('success','Peminjaman Berhasil Ditambahakan');
+        ->with('success','Data Peminjaman berhasil di update');
         
     }
 

@@ -11,9 +11,9 @@
         <div class="float-left my-3">
             <form action="{{ route('pinjam.index') }}">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="" name="search" value="{{ request('search')}}" style="width: 890px">
-                    <button class="btn btn-primary" type="submit">Search</button>&emsp;
-                    <a class="btn btn-success" href="{{ route('pinjam.create') }}"> Input Data</a>
+                    <!-- <input type="text" class="form-control" placeholder="" name="search" value="{{ request('search')}}" style="width: 890px">
+                    <button class="btn btn-primary" type="submit">Search</button>&emsp; -->
+                    <a class="btn btn-success" href="{{ route('pinjam.create') }}"><i class="bi bi-pencil-square"></i> Input Data</a>
                 </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
         <th><center>Tanggal Pinjam</th>
         <th><center>Tanggal Kembali</th>
         <th><center>Status</th>
-        <th width="280px"><center>Action</th>
+        <th width="250px"><center>Action</th>
     </tr>
     @foreach ($paginate as $pj)
     <tr>
@@ -49,11 +49,11 @@
         <td>{{ $pj->status}}</td>
         <td><center>
             <form action="{{ route('pinjam.destroy',['pinjam'=>$pj->id]) }}" method="POST">
-                <a class="btn btn-info" href="{{ route('pinjam.show',$pj->id) }}">Show</a>
-                <a class="btn btn-primary" href="{{ route('pinjam.edit',$pj->id) }}">Edit</a>
+                <a class="btn btn-info" href="{{ route('pinjam.show',$pj->id) }}"><i class="bi bi-layers-fill"></i></a>
+                <a class="btn btn-primary" href="{{ route('pinjam.edit',$pj->id) }}"><i class="bi bi-pencil-square"></i></a>
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
             </form>
         </td>
     </tr>
