@@ -84,11 +84,11 @@
                                                 </a></center>
                                             @endif
                                         </div>
-                                        <div class="col-md-10">
+                                        <!-- <div class="col-md-10">
                                             <center><a href="{{ route('password.request') }}">
                                                 {{ __('Forgot Your Password?') }}
                                             </a></center>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </form>
                             </div>

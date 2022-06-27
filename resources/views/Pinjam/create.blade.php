@@ -22,7 +22,7 @@
                 <form method="post" action="{{ route('pinjam.store') }}" id="myForm">
                     @csrf
                     <div class="form-group">
-                        <label for="id">ID Anggota</label>
+                        <label for="id">Nama</label>
                         <select name="id" class="form-control select2">
                             @foreach($pinjam_a as $ag)
                             <option value="{{$ag->id}}">{{$ag->nama_ag}}</option>
@@ -30,7 +30,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="id_buku">ID Buku</label>
+                        <label for="id_buku">Judul</label>
                         <select name="id_buku" class="form-control select2">
                         @foreach($pinjam_b as $bk)
                             <option value="{{$bk->id_buku}}">{{$bk->judul}}</option>
