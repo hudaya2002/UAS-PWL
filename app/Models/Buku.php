@@ -13,12 +13,12 @@ class Buku extends Model
     protected $table='buku';    
 
     protected $fillable = [
-        'Id_Buku',
-        'Judul',
-        'Penerbit',
-        'Pengarang',
-        'Jenis',
-        'Stok', 
+        'id_Buku',
+        'judul',
+        'penerbit',
+        'pengarang',
+        'jenis',
+        'stok', 
         
     ];
        
